@@ -7,7 +7,6 @@ Gem::Specification.new do |gem|
   gem.homepage    = "https://github.com/kumapon/fluent-plugin-dynamodb-drc"
   gem.summary     = gem.description
   gem.version     = File.read("VERSION").strip
-  gem.authors     = ["Takashi Matsuno"]
   gem.has_rdoc    = false
   #gem.platform    = Gem::Platform::RUBY
   gem.files       = `git ls-files`.split("\n")

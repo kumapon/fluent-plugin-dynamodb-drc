@@ -8,7 +8,6 @@ Gem::Specification.new do |gem|
   gem.summary     = gem.description
   gem.version     = File.read("VERSION").strip
   gem.authors     = ["Takashi Matsuno"]
-  gem.email       = "g0n5uk3@gmail.com"
   gem.has_rdoc    = false
   #gem.platform    = Gem::Platform::RUBY
   gem.files       = `git ls-files`.split("\n")

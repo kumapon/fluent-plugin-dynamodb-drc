@@ -4,7 +4,7 @@ $:.push File.expand_path('../lib', __FILE__)
 Gem::Specification.new do |gem|
   gem.name        = "fluent-plugin-dynamodb-drc"
   gem.description = "Amazon DynamoDB output plugin for Fluent event collector"
-  gem.homepage    = "https://github.com/gonsuke/fluent-plugin-dynamodb"
+  gem.homepage    = "https://github.com/kumapon/fluent-plugin-dynamodb-drc"
   gem.summary     = gem.description
   gem.version     = File.read("VERSION").strip
   gem.authors     = ["Takashi Matsuno"]

@@ -102,7 +102,8 @@ class DynamoDBOutput < Fluent::BufferedOutput
     batch_size = 0
     batch_records = []
     chunk.msgpack_each {|record|
-      fixed_timestamp = "#{Time.zone.parse(record["time"]).to_i}#{rand(1000000000..9999999999)}"
+      time = Time.parse(record["time"]) rescue Time.now
+      fixed_timestamp = "#{time.to_i}#{rand(1000000000..9999999999)}".to_i
       record["timestamp"] = fixed_timestamp
       batch_records << record
       batch_size += record.to_json.length # FIXME: heuristic

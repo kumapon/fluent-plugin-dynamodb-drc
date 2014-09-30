@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.summary     = gem.description
   gem.version     = File.read("VERSION").strip
   gem.has_rdoc    = false
-  #gem.platform    = Gem::Platform::RUBY
+  gem.authors     = ["Takashi Matsuno", "Sadayuki Furuhashi", "CaDs"]
   gem.files       = `git ls-files`.split("\n")
   gem.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }

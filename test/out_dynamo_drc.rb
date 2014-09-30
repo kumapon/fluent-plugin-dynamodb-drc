@@ -1,7 +1,7 @@
 require 'fluent/test'
-require 'fluent/plugin/out_dynamodb'
+require 'fluent/plugin/out_dynamo_drc'
 
-class DynamoDBOutputTest < Test::Unit::TestCase
+class DynamoDrcOutput < Test::Unit::TestCase
   def setup
     Fluent::Test.setup
   end
@@ -16,7 +16,7 @@ class DynamoDBOutputTest < Test::Unit::TestCase
   ]
 
   def create_driver(conf = CONFIG)
-    Fluent::Test::BufferedOutputTestDriver.new(Fluent::DynamoDBOutput) do
+    Fluent::Test::BufferedOutputTestDriver.new(Fluent::DynamoDrcOutput) do
       def write(chunk)
         chunk.read
       end

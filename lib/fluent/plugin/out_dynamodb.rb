@@ -105,6 +105,8 @@ class DynamoDBOutput < Fluent::BufferedOutput
       time = Time.parse(record["time"]) rescue Time.now
       fixed_timestamp = "#{time.to_i}#{rand(1000000000..9999999999)}".to_i
       record["timestamp"] = fixed_timestamp
+      #Ensuring no empty attributes to avoid Dynamodb errors
+      record.each{|k,v| record[k] = "nil" if v == ""}
       batch_records << record
       batch_size += record.to_json.length # FIXME: heuristic
       if batch_records.size >= BATCHWRITE_ITEM_LIMIT || batch_size >= BATCHWRITE_CONTENT_SIZE_LIMIT

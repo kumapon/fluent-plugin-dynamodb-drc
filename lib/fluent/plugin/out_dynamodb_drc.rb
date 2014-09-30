@@ -2,7 +2,7 @@
 module Fluent
 
 
-class DynamoDBOutput < Fluent::BufferedOutput
+class DynamoDBDrcOutput < Fluent::BufferedOutput
   Fluent::Plugin.register_output('dynamodb_drc', self)
 
   include DetachMultiProcessMixin
